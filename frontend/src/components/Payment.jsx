@@ -146,7 +146,7 @@ const Payment = () => {
     let config = {
       method: "post",
       maxBodyLength: Infinity,
-      url: "http://localhost:3000/payment/orders",
+      url: "https://resumebuilder-job-tracker-backend.onrender.com/payment/orders",
       headers: {
         "Content-Type": "application/json",
       },
@@ -199,7 +199,7 @@ const Payment = () => {
   
   const paymentFetch = async (paymentId) => {
     try {
-      const res = await axiosInstance.get(`http://localhost:3000/payment/paymentId/${paymentId}`);
+      const res = await axiosInstance.get(`https://resumebuilder-job-tracker-backend.onrender.com/payment/paymentId/${paymentId}`);
       const transactionId=paymentId;
       
    
@@ -213,7 +213,7 @@ const Payment = () => {
   const savePayment = async (paymentData,transactionId,templateName) => {
     try {
       
-      const res = await axiosInstance.post(`http://localhost:3000/payment/save-payment-details`, {paymentData,transactionId,templateName});
+      const res = await axiosInstance.post(`https://resumebuilder-job-tracker-backend.onrender.com/payment/save-payment-details`, {paymentData,transactionId,templateName});
       if (!res.data.success) {
         toast.error(res.data.message, { autoClose: 2000, position: "top-center" });
         return;

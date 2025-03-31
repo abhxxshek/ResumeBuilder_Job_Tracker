@@ -24,7 +24,7 @@ const ForgotPassword = () => {
  
     toast.info("Checking email....", {  position: "top-center" }); // Show info message
     axios
-      .post("http://localhost:3000/forgot-password/send-otp", { email }) // Send email as an object
+      .post("https://resumebuilder-job-tracker-backend.onrender.com/forgot-password/send-otp", { email }) // Send email as an object
       .then((res) => {
         if (!res.data.success) {
           toast.error(res.data.message, {
@@ -52,7 +52,7 @@ const ForgotPassword = () => {
 
   const handleVerifyOtp = () => {
     axios
-      .post("http://localhost:3000/forgot-password/verify-otp", { email, otp })
+      .post("https://resumebuilder-job-tracker-backend.onrender.com/forgot-password/verify-otp", { email, otp })
       .then((res) => {
         if (!res.data.success) {
           toast.error(res.data.message, {autoClose: 2000, position: "top-center"});
@@ -76,7 +76,7 @@ const ForgotPassword = () => {
       return;
     }
     axios
-      .post("http://localhost:3000/forgot-password/reset-password", {
+      .post("https://resumebuilder-job-tracker-backend.onrender.com/forgot-password/reset-password", {
         email,
         newPassword,
       })

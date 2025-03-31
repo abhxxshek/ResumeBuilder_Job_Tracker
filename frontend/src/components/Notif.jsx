@@ -3,7 +3,7 @@ import { Box, Typography, List, ListItem, Divider } from '@mui/material';
 import io from 'socket.io-client';
 import moment from 'moment'; 
 
-const socket = io('http://localhost:3000'); 
+const socket = io('https://resumebuilder-job-tracker-backend.onrender.com'); 
 
 const NotificationComponent = () => {
     const [notifications, setNotifications] = useState([]); 
@@ -11,7 +11,7 @@ const NotificationComponent = () => {
     useEffect(() => {
         const fetchNotifications = async () => {
             try {
-                const response = await fetch('http://localhost:3000/user/notifications'); 
+                const response = await fetch('https://resumebuilder-job-tracker-backend.onrender.com/user/notifications'); 
                 const data = await response.json(); 
                 setNotifications(data); 
             } catch (error) {
