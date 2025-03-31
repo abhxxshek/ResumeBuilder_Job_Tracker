@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router(); 
 router.use(express.json());
 const payDetailsModel = require('../models/Payment');
-const User = require('../models/User');
+const User = require('../models/user');
 const notificationModel = require('../models/Notification');
 const userStatsModel = require('../models/userStats');
 const styleModel = require('../models/Style');

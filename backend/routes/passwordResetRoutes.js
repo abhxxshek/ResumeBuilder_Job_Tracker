@@ -3,7 +3,7 @@ const router=express.Router();
 router.use(express.json());
 router.use(express.urlencoded({extended:true}));
 const otpModel=require('../models/otpData');
-const User=require('../models/User');
+const User=require('../models/user');
 const bcrypt=require('bcryptjs');
 
 //otp generation
